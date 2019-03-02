@@ -1,4 +1,6 @@
-import { Game } from "boardgame.io/core";
+import React, { Component } from 'react';
+import { Client } from 'boardgame.io/react';
+import { Game } from 'boardgame.io/core';
 
 function IsVictory(cells) {
   const positions = [
@@ -25,35 +27,36 @@ function IsVictory(cells) {
   }
 
   return false;
+  
+}
+
+// Return true if all `cells` are occupied.
+function IsDraw(cells) {
+  return cells.filter(c => c === null).length == 0;
 }
 
 const TicTacToe = Game({
-  name: "tic-tac-toe",
-
-  setup: () => ({
-    cells: Array(9).fill(null)
-  }),
+  setup: () => ({ cells: Array(9).fill(null) }),
 
   moves: {
     clickCell(G, ctx, id) {
+      // Ensure that we can't overwrite cells.
       if (G.cells[id] === null) {
         G.cells[id] = ctx.currentPlayer;
       }
-    }
+    },
   },
 
   flow: {
-    movesPerTurn: 1,
-
     endGameIf: (G, ctx) => {
       if (IsVictory(G.cells)) {
         return { winner: ctx.currentPlayer };
       }
-      if (G.cells.filter(c => c === null).length == 0) {
+      if (IsDraw(G.cells)) {
         return { draw: true };
       }
-    }
-  }
+    },
+  },
 });
 
-export default TicTacToe;
+export default TicTacToe

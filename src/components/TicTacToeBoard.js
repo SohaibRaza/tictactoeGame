@@ -1,4 +1,5 @@
 import React from 'react';
+import '../App.css'
 
 class TicTacToeBoard extends React.Component {
   onClick(id) {
@@ -19,7 +20,9 @@ class TicTacToeBoard extends React.Component {
     if (this.props.ctx.gameover) {
       winner =
         this.props.ctx.gameover.winner !== undefined ? (
-          <div id="winner">Winner: {this.props.ctx.gameover.winner}</div>
+          <div id="winner">Winner: {this.props.ctx.gameover.winner}
+            <img className="monkeyAnim" src="https://thumbs.gfycat.com/AgileColorfulIaerismetalmark-max-1mb.gif" />
+          </div>
         ) : (
           <div id="winner">Draw!</div>
         );
