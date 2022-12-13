@@ -11,36 +11,30 @@
   border-collapse: collapse;
   font-family: monospace;
 }
-  
+
 #winner {
-    margin-top: 25px;
-    width: 168px;
-    text-align: center;
+  margin-top: 25px;
+  width: 168px;
+  text-align: center;
 }
-  
+
 td {
-  padding: 20px;
   text-align: center;
   font-weight: bold;
   font-size: 3em;
   color: #555;
   width: 50px;
   height: 50px;
-  background: #f7f1e3;
-}
-.monkeyAnim
-{
-  width:100px;
-  height: 100px;
 }
 td.active {
   cursor: pointer;
-  background: #eeffe9;
 }
-  
-td.active:hover {
-  
+
+.monkeyAnim {
+  width: 100px;
+  height: 100px;
 }
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -51,14 +45,14 @@ td.active:hover {
   font-size: calc(10px + 2vmin);
   color: white;
 }
-#winner
-{
+#winner {
   margin: 0 auto;
   font-size: 2em;
 }
-table{
-  margin:10% auto 0 auto;
-  border: 10px solid  #282c34;
+table {
+  margin: 10% auto 0 auto;
+  border: 8px solid #282c34;
+  border-radius: 8px;
 }
 .App-link {
   color: #61dafb;
